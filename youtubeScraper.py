@@ -8,9 +8,9 @@ SUBJECT="covid"
 MAX_RESULTS=20
 
 
-def scrap_youtube_videos():
+def youtube_scrape(topic,size):
     youtube_api_response = requests.get(
-        f"https://www.googleapis.com/youtube/v3/search?part=snippet&q={SUBJECT}&key={YOUTUBE_API_KEY}&type=video&maxResults={MAX_RESULTS}"
+        f"https://www.googleapis.com/youtube/v3/search?part=snippet&q={topic}&key={YOUTUBE_API_KEY}&type=video&maxResults={size}"
     )
     print(youtube_api_response.json())
 
@@ -21,5 +21,3 @@ def scrap_youtube_videos():
         date=item.get("snippet").get("publishedAt")
         print(url,title, description, date)
 
-if __name__ == "__main__":
-    scrap_youtube_videos()
