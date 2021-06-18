@@ -8,18 +8,12 @@ import pandas as pd
 
 
 def clean(html):
-    '''
-    Get the text from html and do some cleaning
-    '''
     soup = BeautifulSoup(html,"lxml")
     text = soup.get_text()
     text = text.replace('\xa0', ' ')
     return text
 
 def google_scrape(topic,size):
-    '''
-    Parse the URL, and print all the details of the news
-    '''
     df=pd.DataFrame(columns=["description","date", "title", "url","source"])
     scrapurl = f"http://news.google.com/news?q={topic}-19&sort=date&num={size}&output=rss"
     feeds = feedparser.parse(scrapurl).entries
