@@ -1,4 +1,5 @@
 APIkeys.py
+.idea
 __pycache__/
 scraping-env
 *.csv
