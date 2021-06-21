@@ -4,9 +4,6 @@ from datetime import datetime as dt
 import pandas as pd
 
 
-
-
-
 def clean(html):
     soup = BeautifulSoup(html,"lxml")
     text = soup.get_text()

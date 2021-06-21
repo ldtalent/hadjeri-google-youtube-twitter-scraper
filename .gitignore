@@ -1,2 +1,4 @@
 APIkeys.py
+__pycache__/
+scraping-env
 *.csv
